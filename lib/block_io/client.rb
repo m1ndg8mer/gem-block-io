@@ -117,7 +117,7 @@ module BlockIo
 
       # populate the outputs
       outputs.each do |output|
-        tx.out << Bitcoin::TxOut.new(:value => (BigDecimal(output['output_value']) * BigDecimal(100000000)).to_i, :script_pubkey => Bitcoin::Script.parse_from_addr(output['receiving_address']))
+        tx.out << Bitcoin::TxOut.new(:value => (BigDecimal(output['output_value']) * BigDecimal(100000000)).to_i, :script_pubkey => output['receiving_address'])
       end
 
 
